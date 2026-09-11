@@ -174,19 +174,18 @@
     </div>
 
     <!-- Audio Background -->
-    @if($invitation->background_music)
     <audio id="bg-music" loop preload="none">
-        <source src="{{ Storage::url($invitation->background_music) }}" type="audio/mpeg">
+        <!-- Langsung tembak ke file di folder public -->
+        <source src="{{ asset('audio/wedding-song.mp3') }}" type="audio/mpeg">
     </audio>
 
     <button id="music-btn" onclick="toggleMusic()" aria-label="Putar musik" class="hidden fixed bottom-5 right-5 z-50 w-12 h-12 rounded-full bg-luxury-gold text-luxury-black flex items-center justify-center shadow-2xl border border-white/20 transition hover:scale-110">
         <svg id="music-icon" class="w-5 h-5" viewBox="0 0 24 24">
-            <path class="icon-line" d="M9 18V5l10-2v13"></path>
-            <circle class="icon-line" cx="6" cy="18" r="3"></circle>
-            <circle class="icon-line" cx="16" cy="16" r="3"></circle>
+            <path class="icon-line" fill="currentColor" d="M9 18V5l10-2v13"></path>
+            <circle class="icon-line" fill="currentColor" cx="6" cy="18" r="3"></circle>
+            <circle class="icon-line" fill="currentColor" cx="16" cy="16" r="3"></circle>
         </svg>
     </button>
-    @endif
 
     <!-- HERO COVER -->
     <section id="hero-cover" class="fixed inset-0 z-50 h-[100dvh] bg-luxury-black text-white flex items-center justify-center transition-all duration-1000 overflow-y-auto">
@@ -452,6 +451,7 @@
                     </div>
                     @endforeach
                 </div>
+            </div>
             </div>
         </section>
 
